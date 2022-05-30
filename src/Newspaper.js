@@ -1,13 +1,6 @@
-class Newspaper {
-  constructor(title) {
-    this.title = title
-    this.onLoan = false
-  }
+const CatalogueItem = require("./CatalogueItem")
 
-  isOnLoan() {
-    return this.onLoan
-  }
-
+class Newspaper extends CatalogueItem {
   checkIn() {
     throw new Error('newspapers are not available for loan')
   }

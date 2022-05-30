@@ -1,22 +1,7 @@
-class Article {
-  constructor(title) {
-    this.title = title
-    this.onLoan = false
-  }
+const CatalogueItem = require("./CatalogueItem")
 
-  isOnLoan() {
-    return this.onLoan
-  }
-
-  checkIn() {
-     if (!this.isOnLoan()) throw new Error('item is not currently on loan')
-     this.onLoan = false
-  }
-
-  checkOut() {
-    if (this.isOnLoan()) throw new Error('item is currently on loan')
-    this.onLoan = true
-  }
+class Article extends CatalogueItem {
+  //
 }
 
 module.exports = Article
