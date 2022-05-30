@@ -1,9 +1,10 @@
 const Article = require('../src/Article.js')
+const Author = require('../src/Author.js')
 
 describe("Article", () => {
   let article
   beforeEach(() => {
-    article = new Article('My Lovely Book')
+    article = new Article('My Lovely Book', new Author('Dan Brown', 123456789))
   })
 
   describe('#constructor', () => {
@@ -37,6 +38,18 @@ describe("Article", () => {
 
     it ('raises an error if the article is not on loan', () => {
       expect(() => article.checkIn()).toThrowError('item is not currently on loan')
+    })
+  })
+
+  describe('#getAuthor', () => {
+    it('gets the authors name', () => {
+      expect(article.getAuthor()).toEqual('Dan Brown')
+    })
+  })
+
+  describe('#getPublisherPhoneNumber', () => {
+    it('gets the publisher phone number', () => {
+      expect(article.getPublisherPhoneNumber()).toEqual(123456789)
     })
   })
 })

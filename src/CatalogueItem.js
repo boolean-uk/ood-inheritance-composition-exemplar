@@ -1,6 +1,7 @@
 class CatalogueItem {
-  constructor(title) {
+  constructor(title, author) {
     this.title = title
+    this.author = author
     this.onLoan = false
   }
 
@@ -22,6 +23,14 @@ class CatalogueItem {
     }
 
     this.onLoan = true
+  }
+
+  getAuthor() {
+    return this.author.getName()
+  }
+
+  getPublisherPhoneNumber() {
+    return this.author.getPublisherPhoneNumber()
   }
 }
 

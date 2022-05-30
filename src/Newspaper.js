@@ -8,6 +8,10 @@ class Newspaper extends CatalogueItem {
   checkOut() {
     throw new Error('newspapers are not available for loan')
   }
+
+  getAuthor() {
+    throw new Error('newspapers do not have individual authors')
+  }
 }
 
 module.exports = Newspaper
